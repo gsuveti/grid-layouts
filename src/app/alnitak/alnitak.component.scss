@@ -1,0 +1,33 @@
+.container {
+  .header {
+    background-color: #ff5722;
+    grid-area: header;
+    justify-self: stretch;
+  }
+  .menu {
+    background-color: #8bc34a;
+    grid-area: menu;
+  }
+  .content {
+    background-color: white;
+    grid-area: content;
+  }
+  .footer {
+    background-color: #8e24aa;
+    grid-area: footer;
+  }
+
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+
+  height: 100vh;
+  grid-template-columns: 300px 1fr 1fr;
+  grid-template-rows: 100px 1fr 1fr 100px;
+  grid-template-areas: "header header header" "menu menu menu" "content content content" "footer footer footer";
+
+  @media screen and (min-width: 768px) {
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: "menu header header " "menu content content" "menu footer footer";
+  }
+}
